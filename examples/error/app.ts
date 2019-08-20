@@ -1,4 +1,5 @@
-import axios from '../../src/index'
+import axios, { AxiosError } from '../../src';
+import { AxiosError } from '../../src/helpers/error';
 
 axios({
   method: 'get',
@@ -43,6 +44,10 @@ axios({
   .then(res => {
     console.log(res)
   })
-  .catch(e => {
+  .catch((e: AxiosError) => {
     console.log(e.message)
+    console.log(e.config)
+    console.log(e.code)
+    console.log(e.request)
+    console.log(e.isAxiosError)
   })

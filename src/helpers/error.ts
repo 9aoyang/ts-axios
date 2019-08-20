@@ -1,9 +1,4 @@
-import { AxiosError } from './error';
-import { AxiosError } from './../types/index'
-import { AxiosRequestConfig, AxiosResponse } from './../types'
-import { request } from 'http'
-import { config } from 'shelljs'
-import { prototype } from 'stream'
+import { AxiosRequestConfig, AxiosResponse } from './../types';
 
 export class AxiosError extends Error {
   isAxiosError: boolean
@@ -28,16 +23,15 @@ export class AxiosError extends Error {
     // Set the prototype explicitly
     Object.setPrototypeOf(this.isAxiosError, AxiosError.prototype)
   }
+}
 
-  export function createError(
-    message: string,
-    config: AxiosRequestConfig,
-    code?: string | null,
-    request: any,
-    response: AxiosResponse
-  ) {
-    const error = new AxiosError(message, config, code, request, response)
-
-    return error
-  }
+export function createError(
+  message: string,
+  config: AxiosRequestConfig,
+  code?: string | null,
+  request: any,
+  response: AxiosResponse
+) {
+  const error = new AxiosError(message, config, code, request, response)
+  return error
 }
