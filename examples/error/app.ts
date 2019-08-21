@@ -1,5 +1,5 @@
-import axios, { AxiosError } from '../../src';
-import { AxiosError } from '../../src/helpers/error';
+import axios, { AxiosError } from '../../src'
+import { AxiosError } from '../../src/helpers/error'
 
 axios({
   method: 'get',
