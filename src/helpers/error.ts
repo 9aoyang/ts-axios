@@ -11,8 +11,8 @@ export class AxiosError extends Error {
     message: string,
     config: AxiosRequestConfig,
     code?: string | null,
-    request: any,
-    response: AxiosResponse
+    request?: any,
+    response?: AxiosResponse
   ) {
     super(message)
     this.config = config
@@ -29,8 +29,8 @@ export function createError(
   message: string,
   config: AxiosRequestConfig,
   code?: string | null,
-  request: any,
-  response: AxiosResponse
+  request?: any,
+  response?: AxiosResponse
 ) {
   const error = new AxiosError(message, config, code, request, response)
   return error
