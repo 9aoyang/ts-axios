@@ -50,7 +50,7 @@ export default function mergeConfig(
   for (const key in config2) {
     mergeField(key)
   }
-  for (const key in config2) {
+  for (const key in config1) {
     if (!config2[key]) {
       mergeField(key)
     }
