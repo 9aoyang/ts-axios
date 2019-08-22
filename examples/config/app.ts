@@ -21,7 +21,35 @@ import { AxiosTransformer } from './../../src/types'
 //   .catch()
 
 // 请求响应配置化
-axios({
+// axios({
+//   transformRequest: [
+//     function(data) {
+//       return qs.stringify(data)
+//     },
+//     ...(axios.defaults.transformRequest as AxiosTransformer[])
+//   ],
+//   transformResponse: [
+//     ...(axios.defaults.transformResponse as AxiosTransformer[]),
+//     function(data) {
+//       if (typeof data === 'object') {
+//         data.b = 2
+//       }
+//       return data
+//     }
+//   ],
+//   url: '/config/post',
+//   method: 'post',
+//   data: {
+//     a: 1
+//   }
+// })
+//   .then(res => {
+//     console.log(res.data)
+//   })
+//   .catch()
+
+// 扩展 axios.create接口
+const instance = axios.create({
   transformRequest: [
     function(data) {
       return qs.stringify(data)
@@ -32,11 +60,14 @@ axios({
     ...(axios.defaults.transformResponse as AxiosTransformer[]),
     function(data) {
       if (typeof data === 'object') {
-        data.b = 2
+        data.b = 3
       }
       return data
     }
-  ],
+  ]
+})
+
+instance({
   url: '/config/post',
   method: 'post',
   data: {
