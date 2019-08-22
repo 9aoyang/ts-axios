@@ -40,4 +40,6 @@ export function deepMerge(...objects: any[]): any {
       })
     }
   })
+
+  return result
 }
