@@ -34,22 +34,25 @@ module.exports = {
 
   module: {
     rules: [{
-        test: /\.ts$/,
-        enforce: 'pre',
-        use: [{
-          loader: 'tslint-loader'
-        }]
-      },
-      {
-        test: /\.tsx?$/,
-        use: [{
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true
-          }
-        }]
-      }
-    ]
+      test: /\.ts$/,
+      enforce: 'pre',
+      use: [{
+        loader: 'tslint-loader'
+      }]
+    }, {
+      test: /\.tsx?$/,
+      use: [{
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true
+        }
+      }]
+    }, {
+      test: /\.css$/,
+      use: [
+        'style-loader', 'css-loader'
+      ]
+    }]
   },
 
   resolve: {
