@@ -132,5 +132,8 @@
     "webpack": "^4.39.2",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0"
+  },
+  "dependencies": {
+    "atob": "^2.1.2"
   }
 }
