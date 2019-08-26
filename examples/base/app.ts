@@ -1,4 +1,5 @@
-import axios from '../../src/index'
+import axios from '../../src'
+
 /**
  * handle request params
  */
@@ -129,9 +130,11 @@ axios({
     a: 1,
     b: 2
   }
-}).then(res => {
-  console.log(res)
 })
+  .then(res => {
+    console.log(res)
+  })
+  .catch()
 
 axios({
   method: 'post',
@@ -141,6 +144,8 @@ axios({
     a: 3,
     b: 4
   }
-}).then(res => {
-  console.log(res)
 })
+  .then(res => {
+    console.log(res)
+  })
+  .catch()
